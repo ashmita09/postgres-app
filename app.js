@@ -85,7 +85,19 @@ app.get("/select" , function(req,res){
     })      
 })
 
+//delete
+app.get("/delete" , function(req,res){
+    const queryD = "DELETE FROM users"
 
+    client.query(queryD, (err, res) => {
+        if (err) {
+            console.error(err);
+            return
+        }
+        console.log('Data deleted successful');        
+    })
+    res.send("Data deleted")
+})
 app.listen(port,function(err,result){
     console.log("Server started");
 })
