@@ -74,7 +74,7 @@ app.get("/select" , function(req,res){
         {            
             for( var tempRow of result.rows )
             {
-                htmlContent = htmlContent + tempRow.name+ "</br>"
+                htmlContent = htmlContent + tempRow.name
             }
             res.send(htmlContent)
         }
